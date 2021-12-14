@@ -55,11 +55,38 @@ public class Employee
 
     }
 
+    public static void EmpPartTime()
+    {
+        Empwage();
+
+        for (int i = 0; i <= days; i++) {
+            double rand = Math.floor(Math.random() * 10 % 3);
+            if (rand == 1)
+            {
+                present++;
+            } else if (rand == 0)
+            {
+                absent++;
+            } else if (rand == 2)
+            {
+                prt_time_days++;
+            }
+            else {
+                break;
+            }
+        }
+
+        System.out.println("Employee part time hrs " + prt_time_days);
+        int Part = rate * part_time * prt_time_days;
+        System.out.println("The part time total amount is :  "+Part);
+    }
+
 
     public static void main(String[] args)
     {
         //EmployeeAttendance();
-        Empwage();
+        //Empwage();
+        EmpPartTime();
 
 
     }
