@@ -45,10 +45,21 @@ public class Employee
         System.out.println(" Total Absent Days " + absent);
     }
 
+    public static void Empwage()
+    {
+        EmployeeAttendance();
+
+        int wage = rate * emphrs * present;
+
+        System.out.println("Employee Daily Wage is :  "+wage);
+
+    }
+
 
     public static void main(String[] args)
     {
-        EmployeeAttendance();
+        //EmployeeAttendance();
+        Empwage();
 
 
     }
