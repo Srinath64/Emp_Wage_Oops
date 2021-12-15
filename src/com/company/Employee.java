@@ -119,13 +119,18 @@ public class Employee
         System.out.println("The part time days wage amount is : " + partwage);
     }
 
+    public static void EmpCal20()
+    {
+        EmpSwitchcase();
+    }
+
 
     public static void main(String[] args)
     {
         //EmployeeAttendance();
         //Empwage();
         //EmpPartTime();
-        EmpSwitchcase();
-
+        //EmpSwitchcase();
+        EmpCal20();
     }
 }
