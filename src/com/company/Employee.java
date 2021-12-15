@@ -130,6 +130,10 @@ public class Employee
         System.out.println("the total days value "+totaldays);
     }
 
+    public static void ComputeEmpWage{
+        EmpSwitchcase();
+}
+
 
     public static void main(String[] args)
     {
