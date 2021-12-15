@@ -130,7 +130,7 @@ public class Employee
         System.out.println("the total days value "+totaldays);
     }
 
-    public static void ComputeEmpWage{
+    public static void ComputeEmpWage(){
         EmpSwitchcase();
 }
 
@@ -142,6 +142,7 @@ public class Employee
         //EmpPartTime();
         //EmpSwitchcase();
         //EmpCal20();
-        Caltotalwage();
+        //Caltotalwage();
+        ComputeEmpWage();
     }
 }
