@@ -81,13 +81,51 @@ public class Employee
         System.out.println("The part time total amount is :  "+Part);
     }
 
+    public static void EmpSwitchcase() {
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the employee name :");
+        name = sc.next();
+        System.out.print("Enter the days :");
+        days = sc.nextInt();
+
+        System.out.println("The Employee name is : " + name);
+        for (int i = 0; i <= days; i++) {
+            int Empcheck = (int) Math.floor(Math.random() * 10) % 3;
+
+            switch (Empcheck) {
+                case 0:
+                    absent++;
+                    break;
+                case 1:
+                    present++;
+                    break;
+                case 2:
+                    part_time_days1++;
+
+            }
+        }
+
+        int empwage = rate * emphrs * present;
+        int partwage = rate * part_time_days1 * part_time;
+        int abwage = rate * emphrs * absent;
+
+        System.out.println(present);
+        System.out.println(absent);
+        System.out.println(part_time_days1);
+
+        System.out.println("The present wage day amount is :" + empwage);
+        System.out.println("The absent days is amount is : " + abwage);
+        System.out.println("The part time days wage amount is : " + partwage);
+    }
+
 
     public static void main(String[] args)
     {
         //EmployeeAttendance();
         //Empwage();
-        EmpPartTime();
-
+        //EmpPartTime();
+        EmpSwitchcase();
 
     }
 }
