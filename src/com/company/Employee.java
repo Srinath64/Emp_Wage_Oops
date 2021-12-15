@@ -162,6 +162,12 @@ public class Employee
         return totalEmpWage;
     }
 
+    public static void CompanyTotalWage(){
+
+        MultipleCompanyWage();
+
+    }
+
 
     public static void main(String[] args)
     {
@@ -172,6 +178,9 @@ public class Employee
         //EmpCal20();
         //Caltotalwage();
         //ComputeEmpWage();
-        MultipleCompanyWage("Dmart",20,2,20);
+        //MultipleCompanyWage("Dmart",20,2,20);
+        Employee dMart = new Employee("Dmart",20,2,20);
+        dMart.MultipleCompanyWage();
+        System.out.Println(dMart);
     }
 }
