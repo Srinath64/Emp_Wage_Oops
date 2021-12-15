@@ -55,8 +55,7 @@ public class Employee
 
     }
 
-    public static void EmpPartTime()
-    {
+    public static void EmpPartTime() {
         Empwage();
 
         for (int i = 0; i <= days; i++) {
@@ -124,6 +123,13 @@ public class Employee
         EmpSwitchcase();
     }
 
+    public static void Caltotalwage() {
+
+        EmpCal20();
+        int totaldays=(Fixed_hrs*present)+(part_time*part_time_days1);
+        System.out.println("the total days value "+totaldays);
+    }
+
 
     public static void main(String[] args)
     {
@@ -131,6 +137,7 @@ public class Employee
         //Empwage();
         //EmpPartTime();
         //EmpSwitchcase();
-        EmpCal20();
+        //EmpCal20();
+        Caltotalwage();
     }
 }
