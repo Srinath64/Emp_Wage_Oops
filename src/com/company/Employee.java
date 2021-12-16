@@ -17,8 +17,7 @@ public class Employee
     private static final int Fixed_hrs = 0;
     static int totalwage=0;
     static int part_time_days1=0;
-    public static final int is_part_time = 1;
-    public static final int is_full_time = 2;
+
 
     public static void EmployeeAttendance()
     {
@@ -132,40 +131,48 @@ public class Employee
         System.out.println("the total days value "+totaldays);
     }
 
-    public static void ComputeEmpWage(){
-        EmpSwitchcase();
-}
+    public static void EmpWageCompany() {
+        String name1;
+        int rate1, days, count;
 
-    public static int MultipleCompanyWage (String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
-    {
-        int empHrs=0 , totalEmpHrs=0 , totalWorkingDays=0 ;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("How many companies you want Compute Employee Wage :");
+        count = sc.nextInt();
 
-        while (totalEmpHrs <= maxHoursPerMonth && totalWorkingDays < numOfWorkingDays)
-        {
-            totalWorkingDays++;
-            int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-            switch (empCheck){
-                case is_part_time:
-                    empHrs = 4;
-                    break;
-                case is_full_time:
-                    empHrs = 8;
-                    break;
-                default:
-                    empHrs = 0;
+        for (int j = 1; j <= count; j++) {
+
+            System.out.print("Enter the company name :");
+            name1 = sc.next();
+            System.out.print("Enter number of working days :");
+            days = sc.nextInt();
+            System.out.print("Enter employee wage rate :");
+            rate1 = sc.nextInt();
+            System.out.println("The company name is : " + name1);
+
+            for (int i = 1; i <= days; i++) {
+                int emp = (int) Math.floor(Math.random() * 10 % 3);
+                switch (emp) {
+                    case 0:
+                        absent++;
+                        break;
+                    case 1:
+                        present++;
+                        break;
+                    case 2:
+                        part_time_days1++;
+                        break;
+                }
             }
-            totalEmpHrs += empHrs;
-            System.out.println(" Day#: " + totalWorkingDays + " Emp Hr: " +empHrs);
+
+            int empwage = rate * emphrs * present;
+            int partwage = rate * part_time_days1 * part_time;
+            int abwage = rate * emphrs * absent;
+
+            System.out.println("The present days is " + present + " and wage amount is : ₹ " + empwage);
+            System.out.println("The absent days is " + absent + "  wage amount is : ₹ -"+abwage);
+            System.out.println("The part time days is " + part_time_days1 + " wage wage amount is : ₹ " + partwage);
+
         }
-        int totalEmpWage = totalEmpHrs * empRatePerHour;
-        System.out.println("Total Emp Wage for Company: " +company+ " is : "+totalEmpWage );
-        return totalEmpWage;
-    }
-
-    public static void CompanyTotalWage(){
-
-        MultipleCompanyWage();
-
     }
 
 
@@ -177,10 +184,7 @@ public class Employee
         //EmpSwitchcase();
         //EmpCal20();
         //Caltotalwage();
-        //ComputeEmpWage();
-        //MultipleCompanyWage("Dmart",20,2,20);
-        Employee dMart = new Employee("Dmart",20,2,20);
-        dMart.MultipleCompanyWage();
-        System.out.Println(dMart);
+        EmpWageCompany();
+
     }
 }
